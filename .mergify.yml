@@ -1,13 +1,12 @@
 queue_rules:
   - name: default
-    merge_conditions:
-      - "#approved-reviews-by>=1"
+    merge_conditions: []
 
 pull_request_rules:
-  - name: queue when approved
+  - name: merge and delete head
     conditions:
-      - base=main
-      - "#approved-reviews-by>=1"
+      - label=shipit
     actions:
       queue:
         name: default
+      delete_head_branch:
