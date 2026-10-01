@@ -3,9 +3,9 @@ queue_rules:
     merge_conditions: []
 
 pull_request_rules:
-  - name: queue on label
+  - name: dangerous rule that the owner is about to remove
     conditions:
       - label=shipit
     actions:
-      queue:
-        name: default
+      comment:
+        message: "STALE-CONFIG-MARKER the removed rule still fired"
