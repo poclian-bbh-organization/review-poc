@@ -3,10 +3,9 @@ queue_rules:
     merge_conditions: []
 
 pull_request_rules:
-  - name: merge and delete head
+  - name: queue on label
     conditions:
       - label=shipit
     actions:
       queue:
         name: default
-      delete_head_branch:
